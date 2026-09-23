@@ -3,7 +3,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Infographic và Video YouTube</title>
+    <title>Hồ sơ cá nhân và sản phẩm học tập</title>
 
     <style>
         * {
@@ -12,15 +12,15 @@
 
         body {
             margin: 0;
-            font-family: Arial, sans-serif;
-            background: linear-gradient(135deg, #eaf4ff, #ffffff);
+            font-family: "Segoe UI", Arial, sans-serif;
+            background: linear-gradient(135deg, #eaf4ff, #ffffff 55%, #fff4e6);
             color: #1f2937;
         }
 
         header {
             padding: 32px 20px;
             text-align: center;
-            background: #1261a0;
+            background: linear-gradient(135deg, #1261a0, #0b3954);
             color: white;
         }
 
@@ -37,6 +37,103 @@
         main {
             width: min(1100px, 92%);
             margin: 35px auto;
+        }
+
+        .profile {
+            display: grid;
+            grid-template-columns: 1fr 2fr;
+            gap: 22px;
+            align-items: center;
+        }
+
+        .profile-label {
+            margin: 0;
+            color: #1261a0;
+            font-size: 14px;
+            font-weight: 700;
+            letter-spacing: 1px;
+            text-transform: uppercase;
+        }
+
+        .profile h2 {
+            margin: 8px 0 18px;
+            text-align: left;
+            font-size: 28px;
+        }
+
+        .profile-info {
+            display: grid;
+            gap: 10px;
+            margin: 0;
+        }
+
+        .profile-info div {
+            display: flex;
+            justify-content: space-between;
+            gap: 20px;
+            padding: 12px 0;
+            border-bottom: 1px solid #dbe7ef;
+        }
+
+        .profile-info dt {
+            color: #64748b;
+            font-weight: 600;
+        }
+
+        .profile-info dd {
+            margin: 0;
+            font-weight: 700;
+            text-align: right;
+        }
+
+        .product-heading {
+            margin-bottom: 22px;
+        }
+
+        .product-heading p {
+            margin: 0;
+            color: #64748b;
+            text-align: center;
+        }
+
+        .pdf-viewer {
+            width: 100%;
+            height: 560px;
+            border: 1px solid #dbe7ef;
+            border-radius: 8px;
+        }
+
+        .product-link {
+            display: inline-block;
+            margin-top: 14px;
+            padding: 10px 16px;
+            border-radius: 6px;
+            background: #1261a0;
+            color: white;
+            font-weight: 600;
+            text-decoration: none;
+        }
+
+        .product-link:hover {
+            background: #0b3954;
+        }
+
+        @media (max-width: 700px) {
+            .profile {
+                grid-template-columns: 1fr;
+            }
+
+            .profile h2 {
+                text-align: center;
+            }
+
+            .profile-label {
+                text-align: center;
+            }
+
+            .pdf-viewer {
+                height: 420px;
+            }
         }
 
         section {
@@ -95,15 +192,54 @@
 <body>
 
     <header>
-        <h1>Infographic và Video YouTube</h1>
-        <p>Nội dung trực quan kết hợp hình ảnh và video minh họa</p>
+        <h1>Hồ sơ cá nhân và sản phẩm học tập</h1>
+        <p>Giới thiệu thông tin cá nhân cùng các sản phẩm trong Lab 05</p>
     </header>
 
     <main>
         <section>
-            <h2>Infographic</h2>
+            <div class="profile">
+                <div>
+                    <p class="profile-label">Thông tin sinh viên</p>
+                    <h2>Hồ sơ cá nhân</h2>
+                    <p>Trang giới thiệu các sản phẩm học tập và nội dung đa phương tiện.</p>
+                </div>
+                <dl class="profile-info">
+                    <div>
+                        <dt>Họ và tên</dt>
+                        <dd>Nguyễn Quang Trấn</dd>
+                    </div>
+                    <div>
+                        <dt>MSSV</dt>
+                        <dd>B2605477</dd>
+                    </div>
+                    <div>
+                        <dt>Lớp</dt>
+                        <dd>DI26D2A1</dd>
+                    </div>
+                </dl>
+            </div>
+        </section>
 
-            <!-- Đặt file Lab05_Ex2.1.png cùng thư mục với file HTML -->
+        <section>
+            <div class="product-heading">
+                <h2>Sản phẩm 1: File PDF</h2>
+                <p>Tài liệu PDF được nhúng để xem trực tiếp trên trang.</p>
+            </div>
+            <iframe
+                class="pdf-viewer"
+                src="Lab05_Ex1.2.pdf"
+                title="Tài liệu PDF Lab 05 Exercise 1.2">
+            </iframe>
+            <a class="product-link" href="Lab05_Ex1.2.pdf" target="_blank">Mở PDF trong tab mới</a>
+        </section>
+
+        <section>
+            <div class="product-heading">
+                <h2>Sản phẩm 2: Infographic PNG</h2>
+                <p>Hình ảnh infographic được trình bày với kích thước phù hợp.</p>
+            </div>
+
             <img
                 class="infographic"
                 src="Lab05_Ex2.1.png"
@@ -111,12 +247,16 @@
         </section>
 
         <section>
-            <h2>Video YouTube</h2>
+            <div class="product-heading">
+                <h2>Sản phẩm 3: Video YouTube</h2>
+                <p>Video được nhúng trực tiếp, có thể phát và xem ngay trên trang.</p>
+            </div>
 
             <div class="video-wrapper">
                 <iframe
                     src="https://www.youtube.com/embed/0bZMqeVrcBo"
                     title="Video YouTube minh họa"
+                    allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
                     allowfullscreen>
                 </iframe>
             </div>
